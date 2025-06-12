@@ -1,0 +1,8 @@
+.button{
+  background-color: aqua;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 5px 5px rgb(143, 138, 138);
+  padding: px;
+  margin: 5px;
+}

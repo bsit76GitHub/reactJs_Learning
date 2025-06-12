@@ -1,0 +1,35 @@
+body {
+  background-color: black;
+  color: white;
+  margin: 0;
+  padding: 0;
+}
+h1{
+  text-align: center;
+}
+.studentrecordCard {
+  font-size: 80%;
+  border: 2px solid black;
+  border-radius: 20px;
+  background-color: gray;
+  box-shadow: 5px 5px 5px rgb(84, 83, 83);
+  padding: 10px;
+  margin: 10px;
+  max-width: 300px;
+  text-align: center;
+  display: inline-block;
+}
+
+.studentrecordCard p {
+  margin: 0;
+}
+
+.footer {
+  border: 2px dotted greenyellow;
+  width: 99%;
+  border-radius: 15px;
+  text-align: center;
+  font-weight: bolder;
+  font-size: x-large;
+  display: inline-block;
+}
