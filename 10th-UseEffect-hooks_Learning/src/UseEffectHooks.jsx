@@ -20,35 +20,73 @@
 import React, { useState, useEffect } from "react";
 
 function UseEffectHooks() {
-    const [count, setCount] = useState(0);
-    const [color, setColor] = useState("green");
+
+    //   //===================================================  
+    //     const [count, setCount] = useState(0);
+    //     const [color, setColor] = useState("green");
+
+    //     useEffect(() => {
+    //         document.title = `Count: ${count} ${color} `;
+
+    //     }, [count, color]);
+
+
+    //     function addCount() {
+    //         setCount(c => c + 1);
+    //     }
+
+    //     function substractCount() {
+    //         setCount(c => c - 1);
+    //     }
+
+    //     function changeColor() {
+    //         setColor(c => c === "green" ? "Red" : "green");
+    //     }
+
+    //     return (<>
+
+    //         <h1>useEffect learning <br /> =============== <br /></h1>
+    //         <div className="container1">
+    //             <p style={{ color: color }}>Count : {count}</p>
+    //             <button onClick={addCount}>Add</button>
+    //             <button onClick={substractCount} >Subtract</button>
+    //             <button onClick={changeColor}>Change Color</button>
+    //         </div>
+    //     </>);
+
+    //     // ========================================================
+
+    //2. =========================================================
+    const [width, setWidth] = useState(window.innerWidth);
+    const [height, setHeight] = useState(window.innerHeight);
 
     useEffect(() => {
-        document.title = `Count: ${count} ${color} `;
-    }, [count, color]);
+        window.addEventListener("resize", handleResize);
+        console.log("Event Listner added");
 
+        return () => {
+            window.removeEventListener("resize", handleResize);
+            console.log("Event Listner removed");
+        }
+    }, []);
 
-    function addCount() {
-        setCount(c => c + 1);
-    }
+    // we can use multiple useEffect
 
-    function substractCount() {
-        setCount(c => c - 1);
-    }
+    useEffect( ()=>{
+document.title = `Size: ${width} x ${height}`;
+    },[width,height]);
 
-    function changeColor() {
-        setColor(c => c === "green" ? "Red" : "green");
+    function handleResize() {
+        setWidth(window.innerWidth);
+        setHeight(window.innerHeight);
     }
 
     return (<>
-
-        <h1>useEffect learning <br /> =============== <br /></h1>
-        <div className="container1">
-            <p style={{ color: color }}>Count : {count}</p>
-            <button onClick={addCount}>Add</button>
-            <button onClick={substractCount} >Subtract</button>
-            <button onClick={changeColor}>Change Color</button>
-        </div>
+        <p>Windows width : {width}px</p>
+        <p>Windows height : {height}px</p>
     </>);
+
+    // =============================================================
+
 }
 export default UseEffectHooks
