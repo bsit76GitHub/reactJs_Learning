@@ -1,4 +1,4 @@
-// props = read-only properties thar are shared between components.
+// props = read-only properties that are shared between components.
 //          A parent Component can send data to a child component.
 //          <component key=value />
 
